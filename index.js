@@ -1,16 +1,43 @@
-import { fifaData } from './fifa.js';
-console.log(fifaData);
+import {fifaData} from './fifa.js';
+
+
+console.log(fifaData)
 
 console.log('its working');
 // ⚽️ M  V P ⚽️ //
 
 /* Task 1: Investigate the data above. Practice accessing data by console.log-ing the following pieces of data 
+1-investigate data =  
+2-access data by console.log followwing pieces of data 
+
+
 
 (a) Home Team name for 2014 world cup final
 (b) Away Team name for 2014 world cup final
 (c) Home Team goals for 2014 world cup final
 (d) Away Team goals for 2014 world cup final
 (e) Winner of 2014 world cup final */
+
+function taskA (data){
+    const finalGame = data.filter(function(match){
+        return match.Year === 2014 && match.Stage === "Final"
+    }) 
+    console.log(finalGame)
+    const homeTeamName = finalGame[0]["Home Team Name"]
+    return homeTeamName 
+}
+
+console.log(taskA(fifaData))
+
+function taskB (data) {
+    const finalGame = data.filter(function(match) {
+        return match.Year === 2014 && match.Stage === "Final"
+    }) 
+    console.log(finalGame)
+    const homeTeamName = finalGame[0]["Away Team Name"]
+    return homeTeamName 
+}
+console.log(taskB(fifaData))
 
 
 /* Task 2: Create a function called  getFinals that takes `data` as an argument and returns an array of objects with only finals data */
